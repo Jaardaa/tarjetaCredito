@@ -14,7 +14,7 @@
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fas fa-credit-card"></i></div>
         </div>
-        <input type="text" formControlName="numTarjeta" class="form-control" placeholder="Número de tarjeta">
+        <input type="text" formControlName="numTarjeta" maxlength="16" class="form-control" placeholder="Número de tarjeta">
       </div>
 
       <div class="row">
@@ -23,7 +23,7 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fas fa-calendar"></i></div>
                   </div>
-                  <input type="text" formControlName="fechaExp" class="form-control" placeholder="MM/YY">
+                  <input type="text" formControlName="fechaExp" maxlength="5" class="form-control" placeholder="MM/YY">
                 </div>
         </div>
         <div class="col-lg-5">
@@ -31,7 +31,7 @@
             <div class="input-group-prepend">
               <div class="input-group-text"><i class="fas fa-key"></i></div>
             </div>
-            <input type="password" formControlName="cvv" class="form-control" placeholder="CVV">
+            <input type="password" formControlName="cvv" maxlength="3" class="form-control" placeholder="CVV">
           </div>
         </div>
       </div>
