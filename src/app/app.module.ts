@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { CrearTarjetaComponent } from './components/crear-tarjeta/crear-tarjeta.component';
 import { ListaTarjetaComponent } from './components/lista-tarjeta/lista-tarjeta.component';
 
+import { environment } from '../environments/environment';
+
+import { AngularFireModule } from '@angular/fire/compat'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +19,8 @@ import { ListaTarjetaComponent } from './components/lista-tarjeta/lista-tarjeta.
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    
+    AngularFireModule.initializeApp(environment.firebase),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
