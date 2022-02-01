@@ -1,41 +1,52 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="titulo mb-3">CREAR TARJETA</h5>
+    <h5 class="titulo mb-3">CREAR TARJETA
+      <div *ngIf="loading" class="spinner-border float-right" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+
+    </h5>
     <form (ngSubmit)="guardarTarjeta()" [formGroup]="forma">
 
       <div class="input-group mb-2">
         <div class="input-group-prepend">
-          <div class="input-group-text"><i class="fas fa-user-circle" [class.green-icon]='titular' [class.red-icon]='titularNoValido'></i></div>
+          <div class="input-group-text"><i class="fas fa-user-circle" [class.green-icon]='titular'
+              [class.red-icon]='titularNoValido'></i></div>
         </div>
         <input type="text" formControlName="titular" class="form-control" placeholder="Titular">
       </div>
 
       <div class="input-group mb-2">
         <div class="input-group-prepend">
-          <div class="input-group-text"><i class="fas fa-credit-card" [class.green-icon]='numTarjeta' [class.red-icon]='numTarjetaNoValido'></i></div>
+          <div class="input-group-text"><i class="fas fa-credit-card" [class.green-icon]='numTarjeta'
+              [class.red-icon]='numTarjetaNoValido'></i></div>
         </div>
-        <input type="text" formControlName="numTarjeta" maxlength="16" class="form-control" placeholder="Número de tarjeta">
+        <input type="text" formControlName="numTarjeta" maxlength="16" class="form-control"
+          placeholder="Número de tarjeta">
       </div>
 
       <div class="row">
         <div class="col-lg-7">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fas fa-calendar" [class.green-icon]='fechaExp' [class.red-icon]='fechaExpNoValido'></i></div>
-                  </div>
-                  <input type="text" formControlName="fechaExp" maxlength="5" class="form-control" placeholder="MM/YY">
-                </div>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fas fa-calendar" [class.green-icon]='fechaExp'
+                  [class.red-icon]='fechaExpNoValido'></i></div>
+            </div>
+            <input type="text" formControlName="fechaExp" maxlength="5" class="form-control" placeholder="MM/YY">
+          </div>
         </div>
         <div class="col-lg-5">
           <div class="input-group mb-2">
             <div class="input-group-prepend">
-              <div class="input-group-text"><i class="fas fa-key" [class.green-icon]='cvv' [class.red-icon]='cvvNoValido'></i></div>
+              <div class="input-group-text"><i class="fas fa-key" [class.green-icon]='cvv'
+                  [class.red-icon]='cvvNoValido'></i></div>
             </div>
             <input type="password" formControlName="cvv" maxlength="3" class="form-control" placeholder="CVV">
           </div>
         </div>
       </div>
-      <button  type="submit" [disabled]="this.forma.invalid" class="btn btn-success btn-block mt-3"> <i class="fas fa-database"></i> Guardar
+      <button type="submit" [disabled]="this.forma.invalid" class="btn btn-success btn-block mt-3"> <i
+          class="fas fa-database"></i> Guardar
 
       </button>
     </form>

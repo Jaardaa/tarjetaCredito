@@ -10,6 +10,7 @@ import { TarjetaCredito } from 'src/app/models/TarjetaCredito';
 })
 export class CrearTarjetaComponent implements OnInit {
   forma: FormGroup;
+  loading: boolean = false;
 
   constructor(private fb: FormBuilder, private tarjetaSvc: TarjetaService) {
     this.forma = this.fb.group({
@@ -45,7 +46,11 @@ export class CrearTarjetaComponent implements OnInit {
       fechaCreacion: new Date(),
       FechaActualizacion: new Date(),
     }
+    this.loading = true;
+
     this.tarjetaSvc.guardarTarjeta(tarjeta).then(() => {
+
+      this.loading = false;
       console.log(tarjeta);
       this.forma.reset();
     })
