@@ -1,20 +1,20 @@
 <div class="card">
   <div class="card-body">
     <h5 class="titulo mb-3">CREAR TARJETA</h5>
-    <form>
+    <form (ngSubmit)="guardarTarjeta()" [formGroup]="forma">
 
       <div class="input-group mb-2">
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fas fa-user-circle"></i></div>
         </div>
-        <input type="text" class="form-control" placeholder="Titular">
+        <input type="text" formControlName="titular" class="form-control" placeholder="Titular">
       </div>
 
       <div class="input-group mb-2">
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fas fa-credit-card"></i></div>
         </div>
-        <input type="text" class="form-control" placeholder="Número de tarjeta">
+        <input type="text" formControlName="numTarjeta" class="form-control" placeholder="Número de tarjeta">
       </div>
 
       <div class="row">
@@ -23,7 +23,7 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fas fa-calendar"></i></div>
                   </div>
-                  <input type="text" class="form-control" placeholder="MM/YY">
+                  <input type="text" formControlName="fechaExp" class="form-control" placeholder="MM/YY">
                 </div>
         </div>
         <div class="col-lg-5">
@@ -31,11 +31,11 @@
             <div class="input-group-prepend">
               <div class="input-group-text"><i class="fas fa-key"></i></div>
             </div>
-            <input type="password" class="form-control" placeholder="CVV">
+            <input type="password" formControlName="cvv" class="form-control" placeholder="CVV">
           </div>
         </div>
       </div>
-      <button class="btn btn-success btn-block mt-3"> <i class="fas fa-database"></i> Guardar
+      <button  type="submit" class="btn btn-success btn-block mt-3"> <i class="fas fa-database"></i> Guardar
 
       </button>
     </form>
